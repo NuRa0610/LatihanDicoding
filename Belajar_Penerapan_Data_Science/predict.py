@@ -1,14 +1,19 @@
 import joblib
- 
-model = joblib.load("./model/rf_model.joblib")
-result_target = joblib.load("./model/encoder_target.joblib")
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, 'model')
+
+# Load model and encoder
+model = joblib.load(os.path.join(MODEL_DIR, 'rf_model.joblib'))
+result_target = joblib.load(os.path.join(MODEL_DIR, 'encoder_target.joblib'))
 
 def prediction(data):
     """Making prediction
- 
+
     Args:
         data (Pandas DataFrame): Dataframe that contain all the preprocessed data
- 
+
     Returns:
         str: Prediction result (Good, Standard, or Poor)
     """
