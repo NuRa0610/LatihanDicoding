@@ -6,7 +6,7 @@ import requests
 from io import BytesIO
 
 # Load the saved model
-model = load_model('best_model_revised_98.h5') # Replace 'best_model.keras' with the actual filename
+model = load_model('LAI25-SM013/best_model_revised_98.h5') # Replace 'best_model.keras' with the actual filename
 
 st.title("Muhun manga - LAI25-SM013")
 
